@@ -1,0 +1,197 @@
+@charset "UTF-8";
+*, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: K2D;
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+h1 {
+  font-size: 2rem;
+  color: inherit;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: inherit;
+}
+
+h3 {
+  color: inherit;
+}
+
+h4 {
+  color: inherit;
+  font-size: 1.3rem;
+}
+
+p {
+  color: inherit;
+}
+
+.dark {
+  background-color: #070d3a;
+  color: #F6F2E9;
+}
+.dark a {
+  color: #F6F2E9;
+}
+
+.container {
+  max-width: 1280px;
+  margin: auto;
+}
+.container .header-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.85rem;
+}
+@media (min-width: 720px) {
+  .container .header-container {
+    padding: 0 2rem;
+  }
+}
+.container .header-container .switch {
+  display: flex;
+  align-items: center;
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+  margin-left: 1rem;
+  /* Gömmer default HTML checkbox */
+  /* slider */
+}
+.container .header-container .switch #switchBtn {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.container .header-container .switch #switchBtn:checked + .slider {
+  background-color: #070d3a;
+}
+.container .header-container .switch #switchBtn:checked + .slider:before {
+  transform: translateX(23px);
+  background-color: rgb(173, 179, 230);
+}
+.container .header-container .switch #switchBtn:focus + .slider {
+  box-shadow: 0 0 2px rgb(173, 179, 230);
+}
+.container .header-container .switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(173, 179, 230);
+  border-radius: 34px;
+  transition: 0.4s;
+}
+.container .header-container .switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #070d3a;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.container-spacename {
+  display: flex;
+  justify-content: center;
+  padding: 4rem;
+}
+.container-spacename .spacefield {
+  border-radius: 16px;
+}
+.container-spacename .spacefield .formular {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(173, 179, 230);
+  border-radius: 10px;
+}
+.container-spacename .spacefield .formular form {
+  flex: 0 1 400px;
+  display: flex;
+  flex-direction: column;
+}
+.container-spacename .spacefield .formular form .spacenamn {
+  padding: 1rem 1rem 0.75rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #000000;
+}
+.container-spacename .spacefield .formular form .spacenamn-tecken {
+  font-size: 0.75rem;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  color: #000000;
+}
+.container-spacename .spacefield .formular form input {
+  font-size: 1.3rem;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  transition: 0.5s;
+}
+.container-spacename .spacefield .formular form input::-moz-placeholder {
+  color: grey;
+}
+.container-spacename .spacefield .formular form input::placeholder {
+  color: grey;
+}
+.container-spacename .spacefield .formular form input[type=submit] {
+  border: none;
+  background-color: #070d3a;
+  color: #F6F2E9;
+}
+.container-spacename .spacefield .formular form input:disabled {
+  background-color: rgb(173, 179, 230);
+  color: #070d3a;
+  cursor: not-allowed;
+}
+.container-spacename .spacefield .formular form input.focusBorder {
+  outline: none;
+  border-bottom: 4px solid #070d3a;
+}
+
+.container-welcome {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 4rem;
+}
+
+#opportunity {
+  display: flex;
+  justify-content: space-around;
+}
+@media (max-width: 520px) {
+  #opportunity {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 520px) {
+  #opportunity {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+#opportunity img {
+  max-width: 375px;
+  border-radius: 25px;
+}/*# sourceMappingURL=style.css.map */

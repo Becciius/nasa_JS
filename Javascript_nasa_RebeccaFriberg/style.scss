@@ -1,0 +1,238 @@
+// Färgvariabler för både mörkt och ljus läge
+$darkmode-dark: #070d3a;
+$darkmode-text: #F6F2E9;
+$darkmode-light: rgb(173, 179, 230);
+
+$lightmode-dark: #FFFFFF;
+$lightmode-text: #000000;
+$lightmode-light: #F0F0F0;
+
+
+*,html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: K2D;
+    background-color: $lightmode-dark; // Standard bakgrundsfärg
+    color: $lightmode-text; // Standard textfärg
+}
+h1{
+    // @media (min-width: 1280px) {
+    //     font-size: 2.5rem;
+    // }
+    font-size: 2rem;
+    color: inherit; // Ärv färgen från föräldern (body)
+}
+h2{
+    // @media (min-width: 1280px) {
+    //     font-size: 2rem;
+    // }
+    font-size: 1.5rem;
+    color: inherit; // Ärv färgen från föräldern (body)
+}
+h3{
+    color: inherit; // Ärv färgen från föräldern (body)
+}
+h4{
+    color: inherit; // Ärv färgen från föräldern (body)
+    font-size: 1.3rem;
+}
+p{
+    color: inherit; // Ärv färgen från föräldern (body)
+}
+
+.dark {
+    background-color: $darkmode-dark;
+    color: $darkmode-text;
+
+    a {
+        color: $darkmode-text;
+    }
+}
+
+.container{
+    max-width: 1280px;
+    // background-color: $darkmode-dark;
+    margin: auto;
+    // display: flex;
+    // flex-wrap: wrap;
+    .header-container{
+        @media (min-width: 720px) {
+            padding: 0 2rem;
+        }
+        display: flex;
+        justify-content: space-between;
+        padding: 0 0.85rem;
+        
+        //Darkmode-switch med stil
+        .switch{
+            display: flex;
+            align-items: center;
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 28px;
+            margin-left: 1rem;
+
+        
+            /* Gömmer default HTML checkbox */
+            #switchBtn {
+                opacity: 0;
+                width: 0;
+                height: 0;
+        
+                &:checked {
+        
+                    //När den är i kryssad (lånad från lektion)
+                    + {
+                        .slider {
+                            //Gör detta med slider som är Lila bg 
+                            background-color: $darkmode-dark;
+        
+                            &:before {
+                                //Påverkar cirkeln
+                                transform: translateX(23px); //hur långt cirkel förflyttar sig
+                                background-color: $darkmode-light;
+                            }
+                        }
+                    }
+                }
+        
+                &:focus {
+        
+                    //När den är markerad klickad på
+                    + {
+                        .slider {
+                            //Väljer alla .slider som är placerade direkt efter input
+                            //Skugga när man klickar
+                            box-shadow: 0 0 2px $darkmode-light;
+                        }
+                    }
+                }
+            }
+        
+            /* slider */
+            .slider {
+                //Lila BG 
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: $darkmode-light;
+                border-radius: 34px;
+                transition: .4s;
+        
+                &:before {
+                    //Cirkeln i slider
+                    position: absolute;
+                    content: "";
+                    height: 20px;
+                    width: 20px;
+                    left: 4px;
+                    bottom: 4px;
+                    background-color: $darkmode-dark;
+                    border-radius: 50%;
+                    transition: .4s;
+                }
+            }
+    }
+        }    
+    }
+    .container-spacename{
+        display: flex;
+        justify-content: center;
+        padding: 4rem;
+
+        .spacefield{
+            border-radius: 16px;
+
+            .formular{
+                padding: 2rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: $darkmode-light;
+                border-radius: 10px;
+                form{
+                    flex:0 1 400px;
+                    display: flex;
+                    flex-direction: column;
+                    .spacenamn{
+                        padding: 1rem 1rem 0.75rem;
+                        text-align: center;
+                        font-size: 2rem;
+                        font-weight: 600;
+                        color: $lightmode-text;
+                    }
+                    .spacenamn-tecken{
+                        font-size: 0.75rem;
+                        text-align: center;
+                        padding-bottom: 0.5rem;
+                        color: $lightmode-text;
+
+                    }
+                    input{
+                        font-size: 1.3rem;
+                        padding: 1rem;
+                        margin-bottom: 0.5rem;
+                        border: none;
+                        border-radius: 4px;
+                        transition: 0.5s;
+        
+                        &::placeholder{
+                            color:grey;
+                        }
+                        // Style på knappen
+                        &[type="submit"]{
+                            border: none;
+                            background-color: $darkmode-dark;
+                            color: $darkmode-text;
+                        }
+                        // Stylar när knappen är disabled
+                        &:disabled{
+                            background-color: $darkmode-light;
+                            color: $darkmode-dark;
+                            cursor: not-allowed;
+                        }
+                        &.focusBorder{
+                            //för att ta bort default focus
+                            outline: none; //tas denna bort så måste något nytt läggas till runt om. den får inte bara aförsvinna 
+                            border-bottom: 4px solid $darkmode-dark;
+        
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+    .container-welcome{
+        display: flex;
+        justify-content: center;
+        padding-bottom: 4rem;
+    }
+    #opportunity{
+        @media(max-width: 520px){
+            display: flex;
+            flex-wrap: wrap;
+        }
+        @media(min-width: 520px){
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        display: flex;
+        justify-content: space-around;
+
+            img{
+                max-width: 375px;
+                border-radius: 25px;
+            }   
+
+    }
+
+

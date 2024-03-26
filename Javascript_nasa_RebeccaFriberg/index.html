@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container p1">
+        <header class="header-container">
+            <h1>NASA MARS ROVERS</h1>
+            <div class="switch">
+                <!-- <p>Toggle light mode</p> -->
+                <label>
+                    <input type="checkbox" id="switchBtn">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </header>
+
+        <section class="container-spacename"> 
+            <div class="spacefield">
+                <main class="formular">
+                    <!-- Alla input taggar ska ligga i ett form-element -->
+                    <form class="myForm" autocomplete="off">
+                        <label class="spacenamn" for="aliasName">Skriv in ditt Spacename!</label>
+                        <label class="spacenamn-tecken" for="aliasName">(Måste vara minst 3 tecken)</label>
+                        <input id="aliasName" type="text" placeholder="Pick your spacename">
+                        <input id="sendBtn" type="submit" disabled>
+                    </form>
+                    
+                </main>
+            </div>
+        </section>
+
+        <div class="container-welcome">
+            <h2 id="displayUsername"></h2>
+            <h2 id="resultElement"></h2>
+        </div>
+
+        <div id="opportunity">
+            <!-- Här kommer dina kort att läggas till dynamiskt från JavaScript -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

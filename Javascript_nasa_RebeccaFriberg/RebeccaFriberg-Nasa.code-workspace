@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../lektioner/lektion-26/dom-start"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "lektion-31"
+	}
+}
